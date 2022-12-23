@@ -15,8 +15,10 @@ function AllCourses() {
             courses.length>0?courses.map((item)=>
             <Course courses={item} />):"No Courses"
         } */}
-        
-        <Course courses={courselist}/>
+        {
+          courses.length>0?courselist:"No courses"
+        }
+        {/* {courselist} */}
       
         
         {/* <Course courses={{title:"Java Course",description:"This is a java courses"}}/> */}
