@@ -5,9 +5,7 @@ function Home() {
     <div className='jumbotron text-center bg-warning'>
             
                 <h1 className= "display-3">Deep Learning of react</h1>
-                <p> 
-                Developed by Shreyansh Gupta for basic understanding of react
-                </p>
+                
                 <div class="container">
                     <Button color="primary" outline>Start Using</Button>
                     
