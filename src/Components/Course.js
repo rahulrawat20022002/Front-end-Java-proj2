@@ -7,14 +7,13 @@ import {
     Container,
     CardText,
     CardSubtitle,
-    CardFooter,
-    CardTitle
-    
 } from 'reactstrap'
 import base_url from '../API/ServiceAPi';
 import { toast } from 'react-toastify';
+import { Link } from 'react-router-dom';
 
 function Course({courses,update}) {
+
     const deleteItem=(id)=>{
         axios.delete(`${base_url}/courses/${id}`).then(
             (response)=>{
@@ -26,6 +25,8 @@ function Course({courses,update}) {
 
         )
     }
+
+    
   return (
     <div>
         <Card>
@@ -34,7 +35,10 @@ function Course({courses,update}) {
                 <CardText>{courses.id}</CardText>
                 <CardText>{courses.description}</CardText>
                     <Container className='text-center'>
-                        <Button color='warning m-2'>Update</Button>
+                        <Link to='/updateCourses'>
+                            <Button color='warning m-2' a>Update</Button>
+                        </Link>
+                        
                         <Button onClick={()=>deleteItem(courses.id)} color='danger m-2'>Delete</Button>
                     </Container>
             </CardBody>

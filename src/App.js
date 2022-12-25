@@ -1,14 +1,14 @@
 import './App.css';
-import { Button, Col, Container, Row } from 'reactstrap';
-import { toast,ToastContainer } from 'react-toastify';
+import { Col, Container, Row } from 'reactstrap';
+import { ToastContainer } from 'react-toastify';
 import Home from './Components/Home';
 import Header from './Components/Header';
-import NavHead from './Components/NavHead';
-import Course from './Components/Course';
 import AllCourses from './Components/AllCourses';
 import AddCourses from './Components/AddCourses';
 import Menu from './Components/Menu';
 import { BrowserRouter, Route, Routes } from 'react-router-dom';
+import UpdateCourses from './Components/UpdateCourses';
+
 
 function App() {
   
@@ -20,20 +20,22 @@ function App() {
         
         <Header/>
         <Row>
-          <Col md={4}><Menu/></Col>
-          <Col md={8}>
+          <Col className='my-4' md={3}><Menu/></Col>
+          <Col md={9}>
             
           <BrowserRouter>
 
             <Routes>
-              <Route path='/' element={<Home/>} exact/>
+              <Route path='/' element={<Home/>} />
               <Route path='/addCourses' element={<AddCourses/>}/>
-              <Route path='/viewCourses' element={<AllCourses/>} exact/>
+              <Route path='/viewCourses' element={<AllCourses/>} />
               <Route path='/about' element={<Home/>}/>
+              <Route path='/updateCourses' element={<UpdateCourses/>}/>
+        
             </Routes>
 
           </BrowserRouter>
-            
+  
           </Col>
         </Row>
         

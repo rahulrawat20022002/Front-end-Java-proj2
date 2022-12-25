@@ -12,7 +12,7 @@ function AllCourses() {
       (response)=>{
         toast.success("Courses has been loaded")
         setCourses(response.data)
-        console.log(response);
+        // console.log(response);
 
       },
       (error)=>{
@@ -30,13 +30,13 @@ function AllCourses() {
     },[])
     
     const updateCourse=(id)=>{
-      setCourses(courses.filter((c)=>c.id!=id))
+      setCourses(courses.filter((c)=>c.id!==id))
   }
     const courselist=courses.map((item)=> <Course key={item.id} courses={item} update={updateCourse}/>)
 
   return (
     <div>
-        <h1>All Course</h1>
+        <h1>All Courses</h1>
         {
           courses.length>0?courselist:"No courses"
         }

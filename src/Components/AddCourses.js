@@ -1,5 +1,4 @@
-import React, { Fragment, useState } from 'react'
-import { AxiosContext } from 'react-axios/lib/components/AxiosProvider';
+import React, {useState } from 'react'
 import axios from 'axios';
 import { Button, Container, Form, FormGroup, Input, Label } from 'reactstrap'
 import base_url from '../API/ServiceAPi';
@@ -18,7 +17,7 @@ function AddCourses() {
   const addCoursestoServer=(data)=>{
     axios.post(`${base_url}/courses`,data).then(
       (response)=>{
-        console.log(response.data);
+        // console.log(response.data);
         toast.success("Successfully Added")
       },(error)=>{
         toast.error(error)
